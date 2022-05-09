@@ -1,8 +1,10 @@
 import React, { useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import './Signup.css'
 import '../Add-new-item/AddItems.css'
+
+
 
 
 import { Link, useHref, useNavigate } from 'react-router-dom';
@@ -32,6 +34,7 @@ const Signup = () => {
         navigate('/home')
 
     }
+
 
     const handleSubmit = event => {
         event.preventDefault()

@@ -9,6 +9,8 @@ import Home from './components/Home/Home';
 import Items from './components/Home/Items/Items';
 import AddItems from './components/Add-new-item/AddItems';
 import MyItems from './components/MyItems/MyItems';
+import RequreAuth from './components/Add-new-item/Requreauth/Requreauth';
+import ManageItems from './components/common/ManageItems/ManageItems';
 
 function App() {
   return (
@@ -20,9 +22,14 @@ function App() {
         <Route path='/home' element={<Home></Home>}></Route>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
+        <Route path='/manageitems' element={<ManageItems></ManageItems>}></Route>
         <Route path='/items' element={<Items></Items>}></Route>
-        <Route path='/myitems' element={<MyItems></MyItems>}></Route>
-        <Route path='/additems' element={<AddItems></AddItems>}></Route>
+        <Route path='/myitems' element={
+          <RequreAuth>
+            <MyItems></MyItems>
+          </RequreAuth>
+        }></Route>
+        <Route path='/additems' element={<RequreAuth><AddItems></AddItems></RequreAuth>}></Route>
         <Route path='/register' element={<Signup></Signup>}></Route>
       </Routes>
       <Foooter></Foooter>

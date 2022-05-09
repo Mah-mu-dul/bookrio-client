@@ -2,8 +2,8 @@ import { Button } from 'react-bootstrap';
 import React from 'react';
 import { Google } from 'react-bootstrap-icons';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
-import auth from '../../firebase.init';
 import { useNavigate } from 'react-router-dom';
+import auth from '../../firebase.init';
 
 const SocialLogin = () => {
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
