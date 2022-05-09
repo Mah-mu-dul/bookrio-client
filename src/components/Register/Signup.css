@@ -1,0 +1,22 @@
+.register{
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 1px 5px 20px 15px rgba(128, 128, 128, 0.661);
+}
+
+
+
+@media (min-width: 576px) {
+    .register{
+        width: 90%;
+    
+    }
+
+}
+
+@media (min-width: 992px) {
+    .register{
+        width: 50%;
+    }
+}
