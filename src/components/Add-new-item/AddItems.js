@@ -11,8 +11,9 @@ const AddItems = () => {
         const quantity = event.target.quantity.value
         const price = event.target.price.value
         const email = event.target.email.value
+        const description = event.target.description.value
 
-        const newBook = {name, img, supplyer, quantity, price, email}
+        const newBook = { name, img, supplyer, quantity, price, email, description}
         console.log(newBook);
 
         fetch('http://localhost:5000/books',{
@@ -60,6 +61,10 @@ const AddItems = () => {
                     <Form.Group className="mb-3" controlId="formBasictext">
                         <Form.Control name='email' type="email" placeholder="email" />
                     </Form.Group>
+                    <Form.Group className="mb-3" controlId="formBasictext">
+                        <textarea className='form-control' type="textarea" placeholder='Description' name="description" id="" />
+                    </Form.Group>
+
                 
 
 

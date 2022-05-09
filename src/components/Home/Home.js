@@ -1,5 +1,6 @@
 import React from 'react';
 import { Carousel } from 'react-bootstrap';
+import Allitems from '../All-items/Allitems';
 import './Home.css'
 
 
@@ -47,6 +48,7 @@ const Home = () => {
                 </Carousel>
             </div>
             <div className="items">
+                <Allitems></Allitems>
 
             </div>
         </div>
