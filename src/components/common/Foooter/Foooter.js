@@ -11,7 +11,7 @@ const Foooter = () => {
         <div className='text-white bg-dark d-lg-flex justify-content-between App '>
             <div className="d-lg-flex justify-content-around container ">
                 <div className=" m-4 my-sm-5">
-                    <h3><FaSwatchbook className='me-2 text-danger' color="" size={28} />BOOKory</h3>
+                    <h2><FaSwatchbook className='me-2 text-danger' color="" size={40} />BOOKory</h2>
                     <small className="cikna"> 1418 River Drive, Suite 35 <br />
                         Cottonhall, CA 9622</small>
                     <div className="icon cikna">

@@ -7,6 +7,7 @@ import './Login.css'
 import SocialLogin from './SocialLogin';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import '../Add-new-item/AddItems.css'
 
 
 
@@ -66,7 +67,7 @@ const Login = () => {
 
 
     return (
-        <div className=' mb-5'>
+        <div className=' mb-5 code-pro'>
             <div className='login  mx-auto mt-5'>
                 <div className="text-center"> <h2>Welcome back </h2></div>
                 <Form onSubmit={handleSubmit}>

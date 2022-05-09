@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import './Signup.css'
+import '../Add-new-item/AddItems.css'
 
 
 import { Link, useHref, useNavigate } from 'react-router-dom';
@@ -42,7 +43,7 @@ const Signup = () => {
     }
 
     return (
-        <div className="body m-5">
+        <div className="body m-5 code-pro">
             <div className=' register   mx-auto mt-5'>
                 <div className="text-center"> <h2>Register first</h2></div>
                 <Form onSubmit={handleSubmit}>
