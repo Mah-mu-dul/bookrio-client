@@ -16,16 +16,16 @@ const Header = () => {
         <div className="text-black">
             <Navbar bg=" nav fixed-top" expand="lg code-pro">
                 <Container>
-                    <Navbar.Brand href="/"><h3 className='mx-auto supermar'><FaSwatchbook className='text-danger me-2' color="black" size={20} />BOOKory</h3></Navbar.Brand>
+                    <Navbar.Brand href="/"><h3 className='mx-auto supermar'><FaSwatchbook className='text-danger me-2' color="black" size={20} />BOOKrio</h3></Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav ">
                         <Nav className="mx-auto  me-auto ">
                             <div className="d-lg-flex me-lg-5">
                                 <Nav.Link href="/home"><h4>Home</h4></Nav.Link>
                                 {
-                                    user ?<>
+                                    user ? <>
                                         <Nav.Link href="/manageitems"><h4>Manage-Items</h4></Nav.Link>
-                                       <Nav.Link href="/additems"><h4>Add-Items</h4></Nav.Link>
+                                        <Nav.Link href="/additems"><h4>Add-Items</h4></Nav.Link>
                                         <Nav.Link href="/myitems"><h4>My-Items</h4></Nav.Link></>
                                         :
                                         <></>

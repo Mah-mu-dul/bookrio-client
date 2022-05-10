@@ -7,7 +7,7 @@ import './Home.css'
 const Home = () => {
     return (
         <div>
-            <div className="baner">
+            <div className="baner ">
                 <Carousel>
                     <Carousel.Item>
                         <img

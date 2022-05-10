@@ -11,6 +11,7 @@ import AddItems from './components/Add-new-item/AddItems';
 import MyItems from './components/MyItems/MyItems';
 import RequreAuth from './components/Add-new-item/Requreauth/Requreauth';
 import ManageItems from './components/common/ManageItems/ManageItems';
+import UpdateItems from './components/Updateitems/UpdateItems';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
           </RequreAuth>
         }></Route>
         <Route path='/additems' element={<RequreAuth><AddItems></AddItems></RequreAuth>}></Route>
+        <Route path='/book/:id' element={<RequreAuth><UpdateItems></UpdateItems></RequreAuth>}></Route>
         <Route path='/register' element={<Signup></Signup>}></Route>
       </Routes>
       <Foooter></Foooter>

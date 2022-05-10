@@ -41,28 +41,28 @@ const AddItems = () => {
             <div className="imput-part container w-50 m-5 mx-auto">
                 <Form onSubmit={handleAddItem}>
                     <Form.Group className="mb-3" controlId="">
-                        <Form.Control name='imgurl' type="text" placeholder="Image URL" />
+                        <Form.Control name='imgurl' type="text" required placeholder="Image URL" />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasictext">
-                        <Form.Control name='name' type="text" placeholder="Product name" />
-                    </Form.Group>
-                
-                    <Form.Group className="mb-3" controlId="formBasictext">
-                        <Form.Control name='supplyer' type="text" placeholder="Product supplyer" />
+                        <Form.Control name='name' type="text" required placeholder="Product name" />
                     </Form.Group>
                 
                     <Form.Group className="mb-3" controlId="formBasictext">
-                        <Form.Control name='quantity' type="number" placeholder="Product Quantity" />
-                    </Form.Group>
-                    <Form.Group className="mb-3" controlId="formBasictext">
-                        <Form.Control name='price' type="number" placeholder="Product price" />
+                        <Form.Control name='supplyer' type="text" required placeholder="Product supplyer" />
                     </Form.Group>
                 
                     <Form.Group className="mb-3" controlId="formBasictext">
-                        <Form.Control name='email' type="email" placeholder="email" />
+                        <Form.Control name='quantity' type="number" required placeholder="Product Quantity" />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasictext">
-                        <textarea className='form-control' type="textarea" placeholder='Description' name="description" id="" />
+                        <Form.Control name='price' type="number" required placeholder="Product price" />
+                    </Form.Group>
+                
+                    <Form.Group className="mb-3" controlId="formBasictext">
+                        <Form.Control name='email' type="email" required placeholder="email" />
+                    </Form.Group>
+                    <Form.Group className="mb-3" controlId="formBasictext">
+                        <textarea className='form-control' type="textarea" required placeholder='Description' name="description" id="" />
                     </Form.Group>
 
                 
