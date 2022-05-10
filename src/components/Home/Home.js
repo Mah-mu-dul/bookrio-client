@@ -1,10 +1,40 @@
 import React from 'react';
-import { Carousel } from 'react-bootstrap';
+import { Button, Carousel, Form } from 'react-bootstrap';
 import Allitems from '../All-items/Allitems';
 import './Home.css'
 
 
 const Home = () => {
+    const handleBlog = event =>{
+        event.preventDefault()
+        const name = event.target.name.value
+        const img = event.target.imgurl.value
+        const bloger = event.target.supplyer.value
+        const email = event.target.email.value
+        const description = event.target.description.value
+         const type = 'blog'
+        const newBlog = { name, img, type,bloger, email, description }
+        console.log(newBlog)
+
+        fetch('http://localhost:5000/blogs', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+
+            },
+            body: JSON.stringify(newBlog)
+
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                alert('item  added sucess fully ')
+                event.target.reset()
+            }
+            )
+
+
+    }
     return (
         <div>
             <div className="baner ">
@@ -50,6 +80,37 @@ const Home = () => {
             <div className="items">
                 <Allitems></Allitems>
 
+            </div>
+            <div className="blog my-5">
+                <h2 className='text-center'>Write a review about a Book</h2>
+              <div className="container ">
+                    <Form onSubmit={handleBlog}>
+                        <Form.Group className="mb-3" controlId="">
+                            <Form.Control name='imgurl' type="text"  placeholder="Image URL (optional)" />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formBasictext">
+                            <Form.Control name='name' type="text" required placeholder="Book name" />
+                        </Form.Group>
+
+                        <Form.Group className="mb-3" controlId="formBasictext">
+                            <Form.Control name='supplyer' type="text" required placeholder="Your name" />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formBasictext">
+                            <Form.Control name='email' type="email" required placeholder=" your email" />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formBasictext">
+                            <textarea className='form-control ' type="textarea" required placeholder='write your blog here' name="description" id="" />
+                        </Form.Group>
+
+
+
+
+
+                        <Button className='' variant="dark" type="submit">
+                            submit
+                        </Button>
+                    </Form>
+              </div>
             </div>
         </div>
     );

@@ -13,6 +13,8 @@ import RequreAuth from './components/Add-new-item/Requreauth/Requreauth';
 import ManageItems from './components/common/ManageItems/ManageItems';
 import UpdateItems from './components/Updateitems/UpdateItems';
 import Error from './components/Error/Error';
+import About from './components/About/About';
+import Blogs from './components/Blogs/Blogs';
 
 function App() {
   return (
@@ -24,6 +26,8 @@ function App() {
         <Route path='/home' element={<Home></Home>}></Route>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
+        <Route path='/blogs' element={<Blogs></Blogs>}></Route>
+        <Route path='/about' element={<About></About>}></Route>
         <Route path='/manageitems' element={<RequreAuth><ManageItems></ManageItems></RequreAuth>}></Route>
         <Route path='/items' element={<Items></Items>}></Route>
         <Route path='/myitems' element={<RequreAuth><MyItems></MyItems></RequreAuth>}></Route>
