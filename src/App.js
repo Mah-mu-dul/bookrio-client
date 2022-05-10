@@ -12,6 +12,7 @@ import MyItems from './components/MyItems/MyItems';
 import RequreAuth from './components/Add-new-item/Requreauth/Requreauth';
 import ManageItems from './components/common/ManageItems/ManageItems';
 import UpdateItems from './components/Updateitems/UpdateItems';
+import Error from './components/Error/Error';
 
 function App() {
   return (
@@ -23,16 +24,14 @@ function App() {
         <Route path='/home' element={<Home></Home>}></Route>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
-        <Route path='/manageitems' element={<ManageItems></ManageItems>}></Route>
+        <Route path='/manageitems' element={<RequreAuth><ManageItems></ManageItems></RequreAuth>}></Route>
         <Route path='/items' element={<Items></Items>}></Route>
-        <Route path='/myitems' element={
-          <RequreAuth>
-            <MyItems></MyItems>
-          </RequreAuth>
-        }></Route>
+        <Route path='/myitems' element={<RequreAuth><MyItems></MyItems></RequreAuth>}></Route>
         <Route path='/additems' element={<RequreAuth><AddItems></AddItems></RequreAuth>}></Route>
         <Route path='/book/:id' element={<RequreAuth><UpdateItems></UpdateItems></RequreAuth>}></Route>
         <Route path='/register' element={<Signup></Signup>}></Route>
+
+        <Route path='*' element={<Error></Error>}></Route>
       </Routes>
       <Foooter></Foooter>
 

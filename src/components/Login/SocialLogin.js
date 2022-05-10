@@ -4,11 +4,15 @@ import { Google } from 'react-bootstrap-icons';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
+import Loading from '../common/Loading/Loading';
 
 const SocialLogin = () => {
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
     const navigate = useNavigate()
     let errorelement;
+    if(loading){
+        <Loading></Loading>
+    }
     if (error) {
         errorelement = (
             <div>

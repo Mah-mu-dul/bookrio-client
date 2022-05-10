@@ -10,14 +10,20 @@ import '../Add-new-item/AddItems.css'
 import { Link, useHref, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import SocialSignup from './SocialSignup';
+import Loading from '../common/Loading/Loading';
 const Signup = () => {
     const [
         createUserWithEmailAndPassword,
         user,
         loading,
         error,
-    ] = useCreateUserWithEmailAndPassword(auth, {sendEmailVerification:true});
-
+    ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+    if (loading) {
+        <Loading></Loading>
+    }
+    if(error){
+        alert(error.message)
+    }
 
     const nameRef = useRef('')
     const emailRef = useRef('')
@@ -79,7 +85,7 @@ const Signup = () => {
                 <p className="text-end">Already have an account? <Link to={'/login'} className="text-danger text-decoration-none" onClick={navigateLogin}>Login</Link></p>
 
             </div>
-            
+
         </div>
     )
 };

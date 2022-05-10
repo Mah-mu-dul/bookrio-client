@@ -8,6 +8,7 @@ import SocialLogin from './SocialLogin';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import '../Add-new-item/AddItems.css'
+import Loading from '../common/Loading/Loading';
 
 
 
@@ -29,9 +30,9 @@ const Login = () => {
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
+   
 
 
-    // const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
 
     const emailRef = useRef('')
     const passwordRef = useRef('')
@@ -45,8 +46,8 @@ const Login = () => {
     }
     const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
 
-    if (sending) {
-       
+    if (sending || loading) {
+        <Loading></Loading>
     }
 
 
