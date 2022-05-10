@@ -14,31 +14,35 @@ const UpdateItems = () => {
 
 
     }, [])
-    const handleDelivar =event =>{
-        const quantity = book.quantity -1
-        const updateBook = { quantity }
-        console.log(updateBook);
+    const handleDelivar = event => {
+        if (book.quantity > 0) {
+            const quantity = book.quantity - 1
+            const updateBook = { quantity }
+            console.log(updateBook);
 
-        const url = `http://localhost:5000/book/${id}`
-        fetch(url, {
-            method: 'PUT',
-            headers: {
-                'content-type': 'application/json'
+            const url = `http://localhost:5000/book/${id}`
+            fetch(url, {
+                method: 'PUT',
+                headers: {
+                    'content-type': 'application/json'
 
-            },
-            body: JSON.stringify(updateBook)
-
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data)
-                alert('item  dalivared ')
-                window.location.reload()
+                },
+                body: JSON.stringify(updateBook)
 
             })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data)
+                    alert('item  dalivared ')
+                    window.location.reload()
+
+                })
+        }
+
+
 
     }
-   
+
 
     const handleUpdateItem = event => {
         // event.preventDefault()
@@ -71,23 +75,36 @@ const UpdateItems = () => {
 
         <div className='d-lg-flex d-sm-block m-5 p-5 '>
             <div className=" container">
-                <img className='w' src={book.img} alt="" />
-                <h2>Book Name: {book.name}</h2>
-                <h2>price : {book.price}</h2>
-                <h2>Available items: {book.quantity}</h2>
-                <button onClick={handleDelivar} className='btn btn-primary text-black fw-bold bg-white'>Delivared</button>
+                <div className="d-lg-flex">
+                    <img style={{width:'40%'}} className=' ' src={book.img} alt="" />
+                    <div className=" m-3">
+                        <h2>Book Name: <span className='text-primary'>{book.name}</span></h2>
+                        <h2>price : ${book.price}</h2>
+                        <h2>Available items: {book.quantity}</h2>
+                        {book.quantity == 0 && <h2 className='text-danger'> item sold</h2>}
+                        <h3>Supplyer: {book.supplyer}</h3>
+                        <h4>supplyer email: {book.email}</h4>
+                    </div>
+                </div>
+                <p><h5>Book details:</h5> {book.description}</p>
+
+
 
             </div>
             <div className="imput-part container w-50 m-5 mx-auto">
+
                 <Form onSubmit={handleUpdateItem}>
 
                     <Form.Group className="mb-3" controlId="formBasictext">
-                        <Form.Control required name='quantity' type="number" placeholder="Product Quantity" />
+                        <Form.Control min="0" required name='quantity' type="number" placeholder="Product Quantity" />
                     </Form.Group>
                     <Button variant="dark" type="submit">
                         update
                     </Button>
+                    <button onClick={handleDelivar} className='btn my-sm-3 mx-lg-5 btn-primary text-black fw-bold bg-white'>Delivared</button>
+
                 </Form>
+
             </div>
         </div>
 

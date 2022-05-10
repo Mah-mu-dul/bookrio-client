@@ -8,6 +8,7 @@ import './Header.css'
 import '../../Add-new-item/AddItems.css'
 const Header = () => {
     const [user] = useAuthState(auth)
+    console.log(user)
 
     const handleSignout = () => {
         signOut(auth)
@@ -38,7 +39,7 @@ const Header = () => {
                                 {
                                     user ?
                                         <button onClick={handleSignout} className='btn  box-none'><h4>signout</h4></button>
-
+                                            
                                         :
                                         <Nav.Link href="/login"><h4>Login</h4></Nav.Link>
                                 }

@@ -47,7 +47,7 @@ const Signup = () => {
         const name = nameRef.current.value
         const email = emailRef.current.value
         const password = passwordRef.current.value
-        createUserWithEmailAndPassword(email, password)
+        createUserWithEmailAndPassword(email, password, name)
         navigatehome()
     }
 

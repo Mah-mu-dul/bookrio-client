@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Card } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
-
+import './Alitems.css'
 const Allitems = () => {
 
     
@@ -20,8 +20,8 @@ const Allitems = () => {
                     books.slice(0, 6).map(book => 
                     <div key={book._id} className=" ">
 
-                            <Card className='mt-4' style={{ width: '20rem' }}>
-                                <Card.Img className='mx-auto overflow-hidden ' style={{ width: '19rem', height: '30rem'}} variant="top" src={book.img} />
+                            <Card className='mt-4 car' style={{ width: '20rem' }}>
+                                <Card.Img className='Card mx-auto rounded' style={{ width: '16rem', height: '20rem'}} variant="top" src={book.img} />
                             <Card.Body>
                                 <Card.Title><h3>{book.name}</h3></Card.Title>
                                 <Card.Title><h2>${book.price}</h2></Card.Title>

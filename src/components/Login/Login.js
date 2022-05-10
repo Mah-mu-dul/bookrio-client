@@ -1,12 +1,14 @@
-import React, { useRef } from 'react';
-import { Button, Form, ToastContainer } from 'react-bootstrap';
-import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import React, { useRef, useState } from 'react';
+import { Button, Form } from 'react-bootstrap';
+import {  useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import './Login.css'
 import SocialLogin from './SocialLogin';
-import { toast } from 'react-toastify';
+
+import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
 import '../Add-new-item/AddItems.css'
 import Loading from '../common/Loading/Loading';
 
@@ -30,7 +32,7 @@ const Login = () => {
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
-   
+
 
 
 
@@ -41,7 +43,7 @@ const Login = () => {
 
     let from = location.state?.from?.pathname || '/'
 
-    const navigateRegister = event => {
+    const navigateRegister = () => {
         navigate('/register')
     }
     const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
@@ -54,7 +56,16 @@ const Login = () => {
 
     if (user) {
         navigate(from, { replace: true })
+        toast('Login in sucessfull')
     }
+    if (error){
+       toast(error?.message)
+
+    }
+    
+    
+
+
 
 
     const handleSubmit = event => {
@@ -69,9 +80,12 @@ const Login = () => {
 
     return (
         <div className=' mb-5 code-pro'>
+
             <div className='login  mx-auto mt-5'>
                 <div className="text-center"> <h2>Welcome back </h2></div>
+
                 <Form onSubmit={handleSubmit}>
+
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Email address</Form.Label>
                         <Form.Control ref={emailRef} type="email" placeholder="Enter email" required />
@@ -83,7 +97,7 @@ const Login = () => {
                         <Form.Control ref={passwordRef} type="password" placeholder="Password" required />
                     </Form.Group>
 
-                    <Button variant="primary" type="submit">
+                    <Button ariant="primary" type="submit">
                         Log in
                     </Button>
                 </Form>
@@ -95,8 +109,9 @@ const Login = () => {
                 <p>{error}</p>
                 <SocialLogin></SocialLogin>
                 <p className="text-end">new to here?  than<button onClick={resetPassword} className='batn'> change password?</button> </p>
+                <ToastContainer />
+
                 <p className="text-end">new to here?  than <Link to={'/register'} className="text-danger text-decoration-none" onClick={navigateRegister}>Register</Link></p>
-                <ToastContainer></ToastContainer>
             </div>
 
         </div>

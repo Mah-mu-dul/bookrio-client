@@ -8,11 +8,11 @@ const Home = () => {
     const handleBlog = event =>{
         event.preventDefault()
         const name = event.target.name.value
+        const type = event.target.type.value
         const img = event.target.imgurl.value
         const bloger = event.target.supplyer.value
         const email = event.target.email.value
         const description = event.target.description.value
-         const type = 'blog'
         const newBlog = { name, img, type,bloger, email, description }
         console.log(newBlog)
 
@@ -90,6 +90,9 @@ const Home = () => {
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="formBasictext">
                             <Form.Control name='name' type="text" required placeholder="Book name" />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formBasictext">
+                            <Form.Control name='type' type="text" required placeholder="Book type" />
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="formBasictext">

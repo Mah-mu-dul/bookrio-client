@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { Button, Card, Nav } from 'react-bootstrap';
+import { Button, Card } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
 import './manageitems.css'
 
 const ManageItems = () => {
@@ -23,7 +24,7 @@ const ManageItems = () => {
             })
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data);
+                   toast('Item deleted')
                     const remaining = books.filter(book => book._id !== id)
                     setBooks(remaining)
                 })
@@ -54,6 +55,8 @@ const ManageItems = () => {
                                                 <Link to={`/book/${book._id}`}><Button variant="dark">details</Button></Link>
                                                 < button className='btn btn-danger' onClick={() => handleBookDelete(book._id)}>Delete item</button>
                                         </div>
+                                            <ToastContainer/>
+
                                     </Card.Body>
                                 </Card>
                             </div>)

@@ -1,17 +1,24 @@
 import React from 'react';
 import { Form,Button } from 'react-bootstrap';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 import './AddItems.css'
 
 const AddItems = () => {
+    const [user] = useAuthState(auth)
     const handleAddItem = event =>{
         event.preventDefault()
         const name = event.target.name.value
         const img = event.target.imgurl.value
-        const supplyer = event.target.supplyer.value
+        let supplyer= event.target.supplyer.value
         const quantity = event.target.quantity.value
         const price = event.target.price.value
-        const email = event.target.email.value
+        let email = event.target.email.value
         const description = event.target.description.value
+        if (!email || !supplyer){
+            email = user.email
+            supplyer = user.displayName
+        }
 
         const newBook = { name, img, supplyer, quantity, price, email, description}
         console.log(newBook);
@@ -48,7 +55,7 @@ const AddItems = () => {
                     </Form.Group>
                 
                     <Form.Group className="mb-3" controlId="formBasictext">
-                        <Form.Control name='supplyer' type="text" required placeholder="Product supplyer" />
+                        <Form.Control name='supplyer' type="text"  placeholder={user.displayName} />
                     </Form.Group>
                 
                     <Form.Group className="mb-3" controlId="formBasictext">
@@ -59,7 +66,7 @@ const AddItems = () => {
                     </Form.Group>
                 
                     <Form.Group className="mb-3" controlId="formBasictext">
-                        <Form.Control name='email' type="email" required placeholder="email" />
+                        <Form.Control name='email' type="email"  placeholder={user.email} />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasictext">
                         <textarea className='form-control' type="textarea" required placeholder='Description' name="description" id="" />
