@@ -15,10 +15,10 @@ const Foooter = () => {
                     <small className="cikna"> 1418 River Drive, Suite 35 <br />
                         Cottonhall, CA 9622</small>
                     <div className="icon cikna">
-                        <Facebook className='me-2 ' color="white" size={20} />
-                        <Twitter className='me-2' color="white" size={20} />
-                        <Instagram className='me-2' color="white" size={20} />
-                        <Pinterest className='me-2' color="white" size={20} />
+                        <a target='_blank' href="https://www.facebook.com/mahmudulhasaniub/"><Facebook className='me-2 ' color="white" size={20} /></a>
+                        <a target='_blank' href="https://twitter.com/?lang=en"><Twitter className='me-2' color="white" size={20} /></a>
+                        <a href="https://www.instagram.com/mah.mu.dul_ha.san/?hl=en"><Instagram className='me-2' color="white" size={20} /></a>
+                        <a href="https://www.pinterest.com/princehasan16216/_saved/">   <Pinterest className='me-2' color="white" size={20} /></a>
                     </div>
 
                 </div>
@@ -43,7 +43,6 @@ const Foooter = () => {
                 <div className="cikna m-4 my-sm-5">
                     <h4 className='fw-bold'>Our Service</h4>
                     <Nav.Link href="/services"><h5 className='text-white '>services</h5></Nav.Link>
-
                 </div>
                 <div className="cikna m-4 my-sm-5">
                     <h4 className='fw-bold'>Categories</h4>
@@ -51,7 +50,6 @@ const Foooter = () => {
                     <h5>Novel</h5>
                     <h5>Travel</h5>
                     <h5>Religion</h5>
-
                 </div>
             </div>
         </div>

@@ -38,34 +38,27 @@ const ManageItems = () => {
         <div>
             <Link className='d-flex  justify-content-center m-5' to={`/additems`}><Button className='text-decoration-none' variant="dark">Want to add a New book?</Button></Link>
 
-            <ul>
+            <ul className='d-flex d-md-wrap mx-auto items  flex-wrap  '>
                 {
-                    <div className='d-flex mx-auto items flex-wrap'>
-                        {
-                            books.map(book =>
+                    books.map(book =>
+                        <div key={book._id} className=" ">
 
-                                <div key={book._id} className="my-lg-4">
-                                    <Card style={{ width: '25rem' }}>
-                                        <Card.Img style={{ width: '25rem', height: '30rem' }} variant="top" src={book.img} />
-                                        <Card.Body>
-                                            <Card.Title>{book.name}</Card.Title>
-                                            <h2>${book.price}</h2>
-                                            <h2>Avlilable: {book.quantity}</h2>
-                                            <Card.Text>
-                                                {book.description?.slice(0, 55)}....
-                                            </Card.Text>
-                                            <div className=" d-lg-flex justify-content-around d-sm-block">
-                                                <Link to={`/book/${book._id}`}><Button variant="dark">details</Button></Link>
-                                                < button className='btn btn-danger' onClick={() => handleBookDelete(book._id)}>Delete item</button>
+                            <Card className='mt-4 car' style={{ width: '20rem' }}>
+                                <Card.Img className='Card mx-auto rounded' style={{ width: '16rem', height: '20rem' }} variant="top" src={book.img} />
+                                <Card.Body>
+                                    <Card.Title><h3>{book.name}</h3></Card.Title>
+                                    <Card.Title><h2>${book.price}</h2></Card.Title>
+                                    <Card.Text>
+                                        {book.description.slice(0,300)}.......
+                                    </Card.Text>
+                                    <Card.Title><h3>Available items : {book.quantity}</h3></Card.Title>
+                                    <Card.Title><h4>supplyer: {book.supplyer}</h4></Card.Title>
+                                    <Link to={`/book/${book._id}`}><Button variant="dark">details</Button></Link>
+                                    < button className='btn btn-danger' onClick={() => handleBookDelete(book._id)}>Delete item</button>
 
-                                            </div>
-                                            <ToastContainer />
-
-                                        </Card.Body>
-                                    </Card>
-                                </div>)
-                        }
-                    </div>
+                                </Card.Body>
+                            </Card>
+                        </div>)
                 }
             </ul>
 
