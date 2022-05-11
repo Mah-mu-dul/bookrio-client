@@ -6,6 +6,7 @@ import './manageitems.css'
 
 const ManageItems = () => {
     const [books, setBooks] = useState([])
+    
     useEffect(() => {
         fetch('http://localhost:5000/books')
             .then(res => res.json())
@@ -14,7 +15,7 @@ const ManageItems = () => {
 
     const navigate = useNavigate()
 
-    const handleBookDelete = id => {
+    const handleBookDelete =async (id) => {
         const proceed = window.confirm(`Are you sure to delete ${id} item`)
         if (proceed) {
             console.log('deleted', id);
@@ -25,8 +26,8 @@ const ManageItems = () => {
                 .then(res => res.json())
                 .then(data => {
                    toast('Item deleted')
-                    const remaining = books.filter(book => book._id !== id)
-                    setBooks(remaining)
+                    const remaining =  books.filter(book => book._id !== id)
+                     setBooks(remaining)
                 })
 
         }
@@ -35,13 +36,15 @@ const ManageItems = () => {
   
     return (
         <div>
+            <Link className='d-flex  justify-content-center m-5' to={`/additems`}><Button className='text-decoration-none' variant="dark">Want to add a New book?</Button></Link>
+
             <ul>
                 {
                     <div className='d-flex mx-auto items flex-wrap'>
                         {
                             books.map(book =>
 
-                            <div key={book._id} className="">
+                            <div key={book._id} className="my-4">
                                 <Card style={{ width: '25rem' }}>
                                         <Card.Img style={{ width: '25rem', height: '30rem' }}  variant="top" src={book.img} />
                                     <Card.Body>

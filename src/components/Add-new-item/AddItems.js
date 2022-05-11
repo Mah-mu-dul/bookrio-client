@@ -55,7 +55,7 @@ const AddItems = () => {
                     </Form.Group>
                 
                     <Form.Group className="mb-3" controlId="formBasictext">
-                        <Form.Control name='supplyer' type="text"  placeholder={user.displayName} />
+                        <Form.Control name='supplyer' type="text"  value={user.displayName} />
                     </Form.Group>
                 
                     <Form.Group className="mb-3" controlId="formBasictext">
@@ -66,7 +66,7 @@ const AddItems = () => {
                     </Form.Group>
                 
                     <Form.Group className="mb-3" controlId="formBasictext">
-                        <Form.Control name='email' type="email"  placeholder={user.email} />
+                        <Form.Control name='email' type="email"  value={user.email} />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasictext">
                         <textarea className='form-control' type="textarea" required placeholder='Description' name="description" id="" />

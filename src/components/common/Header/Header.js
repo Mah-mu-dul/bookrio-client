@@ -8,7 +8,6 @@ import './Header.css'
 import '../../Add-new-item/AddItems.css'
 const Header = () => {
     const [user] = useAuthState(auth)
-    console.log(user)
 
     const handleSignout = () => {
         signOut(auth)
