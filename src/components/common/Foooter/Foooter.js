@@ -8,9 +8,8 @@ import { FaSwatchbook } from "react-icons/fa";
 
 const Foooter = () => {
     return (
-        <div className='text-white bg-dark  py-4 d-lg-flex justify-content-between App '>
-
-            <div className="d-lg-flex d-md-flex justify-content-around container">
+        <div className='text-white bg-dark py-4 d-lg-flex justify-content-between App '>
+            <div className="d-lg-flex d-md-flex justify-content-around container ">
                 <div className=" m-4 my-sm-5">
                     <h2><FaSwatchbook className='me-2 text-danger' color="" size={40} />BOOKrio</h2>
                     <small className="cikna"> 1418 River Drive, Suite 35 <br />
@@ -23,6 +22,16 @@ const Foooter = () => {
                     </div>
 
                 </div>
+                <div className="m-4 my-sm-5">
+                    <h4 className='cikna fw-bold'>Need holp?</h4>
+                    <h2 className='text-danger'>+880    157-1382-855</h2>
+                    <p className="cikna">Monday – Friday: 9:00-20:00 <br />
+                        Saturday: 11:00 – 15:00</p>
+                    <h5 className="cikna">
+                        BOOKrio@gmail.com</h5>
+                </div>
+            </div>
+            <div className="d-lg-flex d-md-flex justify-content-around container">
                 <div className="cikna  m-4 my-sm-5">
                     <h4 className='fw-bold'>Explore</h4>
                     <Nav.Link href="/Home"><h5 className='text-white '>Home</h5></Nav.Link>
@@ -43,15 +52,6 @@ const Foooter = () => {
                     <h5>Travel</h5>
                     <h5>Religion</h5>
 
-                </div>
-
-                <div className="m-4 my-sm-5">
-                    <h4 className='cikna fw-bold'>Need holp?</h4>
-                    <h2 className='text-danger'>+880    157-1382-855</h2>
-                    <p className="cikna">Monday – Friday: 9:00-20:00 <br />
-                        Saturday: 11:00 – 15:00</p>
-                    <h5 className="cikna">
-                        BOOKrio@gmail.com</h5>
                 </div>
             </div>
         </div>

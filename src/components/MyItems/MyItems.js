@@ -35,12 +35,11 @@ const MyItems = () => {
         <div>
             <ul>
                 {
-                    <div className=' container mx-auto items flex-wrap'>
+                    <div className='w-100'>
                         <table>
                             <tr>
                                 <th className='text-center'>Image</th>
                                 <th>Book name</th>
-                                <th>email </th>
                                 <th>price</th>
                                 <th>Avoilable quantity</th>
                             </tr>
@@ -50,7 +49,6 @@ const MyItems = () => {
                                     <tr key={book._id}>
                                         <td className='d-flex rounded-3 justify-content-center' ><img style={{ width: '50px', height: '50px' }} className=' rounded-circle' src={book.img} alt="Book image" /></td>
                                         <td >{book.name}</td>
-                                        <td >{book.email}</td>
                                         <td >{book.price}</td>
                                         <td >{book.quantity}</td>
                                     </tr>
