@@ -15,7 +15,8 @@ const Allitems = () => {
     return (
         <div className=' w-100'>
             <h3>aveilable books : {books.length}</h3>
-            <ul className='d-flex d-md-wrap mx- items flex-wrap  '>
+            <ul className='d-flex d-md-wrap mx- items flex-wra
+              '>
                 {
                     books.slice(0, 6).map(book =>
                         <div key={book._id} className=" ">
