@@ -11,7 +11,7 @@ const Blogs = () => {
     return (
         <div className='w-100 mx-sm-auto '>
             <div className="d-lg-flex border border-1 rounded p-lg-4 p-sm-2 border-warning d-sm-block  justify-content-around m-lg-5 m-sm-3 ">
-                <div className="w-50 mx-sm-auto m-3">
+                <div className="w-90 mx-sm-auto m-3">
                     <h2>Java script</h2>
                     <ul>
                         <li>Javascript is a programming language that is used for writing scripts of website.</li>
@@ -23,7 +23,7 @@ const Blogs = () => {
 
 
                 </div>
-                <div className="w-50 mx-sm-auto m-3">
+                <div className="w-90 mx-sm-auto m-3">
                     <h2>Node js</h2>
                     <ul>
                         <li>NodeJS is a Javascript runtime environment.</li>
@@ -33,9 +33,9 @@ const Blogs = () => {
                     </ul>
                 </div>
             </div>
-            
+
             <div className="d-lg-flex border border-1 rounded p-lg-4 p-sm-2 border-warning d-sm-block  justify-content-around m-lg-5 m-sm-3 ">
-                <div className="w-50 mx-sm-auto m-3">
+                <div className="w-90 mx-sm-auto m-3">
                     <h2>Node js</h2>
                     <ul>
                         <li>Node js id  an asynchronous event-driven JavaScript runtime.</li>
@@ -47,7 +47,7 @@ const Blogs = () => {
 
 
                 </div>
-                <div className="w-50 mx-sm-auto m-3">
+                <div className="w-90 mx-sm-auto m-3">
                     <h2>Mongodb</h2>
                     <ul>
                         <li>mongodb is a nosql data base</li>
@@ -58,7 +58,7 @@ const Blogs = () => {
                 </div>
             </div>
             <div className="d-lg-flex border border-1 rounded p-lg-4 p-sm-2 border-warning d-sm-block  justify-content-around m-lg-5 m-sm-3 ">
-                <div className="w-50 mx-sm-auto m-3">
+                <div className="w-90 mx-sm-auto m-3">
                     <h2>SQL</h2>
                     <ul>
                         <li>SQL databases are relational</li>
@@ -70,7 +70,7 @@ const Blogs = () => {
 
 
                 </div>
-                <div className="w-50 mx-sm-auto m-3">
+                <div className="w-90 mx-sm-auto m-3">
                     <h2>No SQL</h2>
                     <ul>
                         <li>NoSQL databases are non-relational.</li>
@@ -80,30 +80,33 @@ const Blogs = () => {
                     </ul>
                 </div>
             </div>
-            
-            <div style={{width: '100%' , height:'2px'}} className="bg-danger mb-5"></div>
-        <h2 className="text-center text-danger">Blog section</h2>
-            <ul>
+
+            <div style={{ width: '100%', height: '2px' }} className="bg-danger mb-5"></div>
+            <h2 className="text-center text-danger">Blog section</h2>
+            <ul className='container'>
                 {
-                    blogs.map(blog => <div>
-                        <div className='container m-lg-5'>
-                            <div className="container d-lg-flex border border-1 border-warning w-lg-75  w-sm-75 mx-auto m-lg-5  p-4 rounded-2   ">
-                                <div className="w-90">
-                                    <img className='w-100' src={blog?.img} alt="" />
+                    blogs.map(blog =>
+                        <div>
+                            <div className=' m-lg-5'>
+                                <div className=" d-lg-flex m-1     border border-1 border-warning w-lg-75  w-sm-75 mx-auto m-lg-5  p-4 rounded-2   ">
+                                    <div className="w-100">
+                                        <img className='w-100' src={blog?.img} alt="" />
+                                    </div>
+                                    <div className="container mx-lg-4 p-lg-4 ">
+                                        <header><h3 className=' text-danger'>{blog.name}</h3></header>
+                                        <h4>Type of book: {blog.type}</h4>
+                                        <div className="">
+                                            <p>{blog.description}</p>
+                                            <h5 >Review by : <span className="text-primary">{blog.bloger}</span></h5>
+                                            <p>contact with  bloger: {blog.email}</p>
+
+                                        </div>
+                                    </div>
 
                                 </div>
-                                <div className=" mx-lg-4 p-lg-4 ">
-                                    <header><h3 className=' text-danger'>{blog.name}</h3></header>
-                                    <h4>Type of book: {blog.type}</h4>
 
-                                    <p>{blog.description}</p>
-                                    <h5 >Review by : <span className="text-primary">{blog.bloger}</span></h5>
-                                    <p>contact with  bloger: {blog.email}</p>
-
-                                </div>
                             </div>
-                        </div>
-                    </div>)
+                        </div>)
                 }
 
             </ul>

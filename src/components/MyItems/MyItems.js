@@ -59,7 +59,7 @@ const MyItems = () => {
     }
     return (
         <div>
-            <ul>
+            <ul className='p-0 px-lg-5 py-lg-3'>
                 {
                     <div className='w-100'>
                         <table>

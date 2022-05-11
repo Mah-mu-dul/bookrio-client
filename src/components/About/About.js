@@ -2,7 +2,7 @@ import React from 'react';
 
 const About = () => {
     return (
-        <div className='container m-5'>
+        <div className='container m-lg-5 m-sm-2'>
             <div className="container border border-1 border-warning w-lg-75  w-sm-90 mx-auto m-5  p-4 rounded-2   ">
                 <header><h3 className='text-decoration-underline'>Why this website?</h3></header>
                 <p>This is a websie where you can add some books with image URL, Book name , supplyer name , Price and a short description. You can delete an item from manage item page. and update an item quantity (you can increase or decrease quantity ) from details button.</p>

@@ -77,7 +77,7 @@ const Home = () => {
                     </Carousel.Item>
                 </Carousel>
             </div>
-            <div className="items">
+            <div className="items start-0">
                 <Allitems></Allitems>
 
             </div>
