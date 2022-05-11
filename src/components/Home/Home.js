@@ -5,7 +5,7 @@ import './Home.css'
 
 
 const Home = () => {
-    const handleBlog = event =>{
+    const handleBlog = event => {
         event.preventDefault()
         const name = event.target.name.value
         const type = event.target.type.value
@@ -13,10 +13,10 @@ const Home = () => {
         const bloger = event.target.supplyer.value
         const email = event.target.email.value
         const description = event.target.description.value
-        const newBlog = { name, img, type,bloger, email, description }
+        const newBlog = { name, img, type, bloger, email, description }
         console.log(newBlog)
 
-        fetch('http://localhost:5000/blogs', {
+        fetch('https://infinite-hamlet-19135.herokuapp.com/blogs', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -83,10 +83,10 @@ const Home = () => {
             </div>
             <div className="blog my-5">
                 <h2 className='text-center'>Write a review about a Book</h2>
-              <div className="container ">
+                <div className="container ">
                     <Form onSubmit={handleBlog}>
                         <Form.Group className="mb-3" controlId="">
-                            <Form.Control name='imgurl' type="text"  placeholder="Image URL (optional)" />
+                            <Form.Control name='imgurl' type="text" placeholder="Image URL (optional)" />
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="formBasictext">
                             <Form.Control name='name' type="text" required placeholder="Book name" />
@@ -113,7 +113,7 @@ const Home = () => {
                             submit
                         </Button>
                     </Form>
-              </div>
+                </div>
             </div>
         </div>
     );

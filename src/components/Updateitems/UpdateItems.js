@@ -7,7 +7,7 @@ const UpdateItems = () => {
     const [book, setBoook] = useState({})
     console.log(book);
     useEffect(() => {
-        const url = `http://localhost:5000/book/${id}`
+        const url = `https://infinite-hamlet-19135.herokuapp.com/book/${id}`
         fetch(url)
             .then(res => res.json())
             .then(data => setBoook(data))
@@ -20,7 +20,7 @@ const UpdateItems = () => {
             const updateBook = { quantity }
             console.log(updateBook);
 
-            const url = `http://localhost:5000/book/${id}`
+            const url = `https://infinite-hamlet-19135.herokuapp.com/book/${id}`
             fetch(url, {
                 method: 'PUT',
                 headers: {
@@ -52,7 +52,7 @@ const UpdateItems = () => {
         const updateBook = { quantity }
         console.log(updateBook);
 
-        const url = `http://localhost:5000/book/${id}`
+        const url = `https://infinite-hamlet-19135.herokuapp.com/book/${id}`
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -76,7 +76,7 @@ const UpdateItems = () => {
         <div className='d-lg-flex d-sm-block m-5 p-5 '>
             <div className=" container">
                 <div className="d-lg-flex">
-                    <img style={{width:'40%'}} className=' ' src={book.img} alt="" />
+                    <img style={{ width: '40%' }} className=' ' src={book.img} alt="" />
                     <div className=" m-3">
                         <h2>Book Name: <span className='text-primary'>{book.name}</span></h2>
                         <h2>price : ${book.price}</h2>
@@ -101,9 +101,10 @@ const UpdateItems = () => {
                     <Button variant="dark" type="submit">
                         update
                     </Button>
-                    <button onClick={handleDelivar} className='btn my-sm-3 mx-lg-5 btn-primary text-black fw-bold bg-white'>Delivared</button>
 
                 </Form>
+                <button onClick={handleDelivar} className='btn my-sm-3  btn-primary text-black fw-bold bg-white'>Delivared</button>
+
 
             </div>
         </div>

@@ -3,6 +3,7 @@ import { Card } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import './MyItems.css'
+import Loading from '../common/Loading/Loading'
 
 
 
@@ -10,19 +11,26 @@ const MyItems = () => {
     const [books, setBooks] = useState([])
     const [myboooks, setMyBooks] = useState([])
 
-    const [user] = useAuthState(auth)
-    const email = user.email
-    console.log(email)
+    const [user, loading] = useAuthState(auth)
+
+    // console.log(user.email)
+
+    // console.log(user.email)
     useEffect(() => {
-        fetch('http://localhost:5000/books')
+        fetch('https://infinite-hamlet-19135.herokuapp.com/books')
             .then(res => res.json())
-            .then(data => setBooks(data))
-        const remaining = books.filter(book => book.email === email)
-        console.log(remaining)
-        setMyBooks(remaining)
+            .then(data => {
+                const remaining = data.filter(book => book.email === user.email)
+                setMyBooks(remaining)
+                setBooks(data)
+            })
+
+    }, [user])
 
 
-    }, [])
+    if (loading) {
+        return <Loading></Loading>
+    }
     return (
         <div>
             <ul>
@@ -39,8 +47,6 @@ const MyItems = () => {
 
                             {
                                 myboooks.map(book =>
-
-
                                     <tr key={book._id}>
                                         <td className='d-flex rounded-3 justify-content-center' ><img style={{ width: '50px', height: '50px' }} className=' rounded-circle' src={book.img} alt="Book image" /></td>
                                         <td >{book.name}</td>
@@ -51,11 +57,6 @@ const MyItems = () => {
 
 
                                 )}
-
-
-
-
-
                         </table>
                     </div>
                 }
