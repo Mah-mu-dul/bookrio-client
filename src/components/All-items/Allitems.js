@@ -18,7 +18,7 @@ const Allitems = () => {
 
     return (
         <div className=' w-100'>
-            <h3>aveilable books : {books.length}</h3>
+            <h3 className='text-danger text-center mt-5'>Our collections</h3>
             <ul className='d-flex d-md-wrap mx- items flex-wrap  '>
                 {
                     books.slice(0, 6).map(book =>

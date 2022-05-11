@@ -22,7 +22,7 @@ const MyItems = () => {
 
     useEffect(() => {
 
-      
+
         fetch('https://infinite-hamlet-19135.herokuapp.com/books')
             .then(res => res.json())
             .then(data => {
@@ -69,7 +69,7 @@ const MyItems = () => {
                                 <th>price</th>
                                 <th>Avoilable quantity</th>
                                 <th>Delete </th>
-                                
+
                             </tr>
 
                             {
@@ -80,7 +80,7 @@ const MyItems = () => {
                                         <td >{book.price}</td>
                                         <td >{book.quantity}</td>
                                         <td className='text-center text-danger'><h2>< button className='btn btn-danger' onClick={() => handleBookDelete(book._id)}><AiFillDelete></AiFillDelete></button>
-</h2></td>
+                                        </h2></td>
 
                                     </tr>
 

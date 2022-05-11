@@ -71,14 +71,14 @@ const UpdateItems = () => {
             })
 
     }
-    return ( 
+    return (
 
         <div className='d-lg-flex d-sm-block m-lg-5 p-lg-5 p-sm-'>
             <div className=" container w-sm-100">
                 <div className="d-flex container w-100">
 
-                    <div style={{width:'50vw'}} className='  w-100'><img style={{ width: '100%' }} className=' ' src={book.img} alt="" /></div>
-                   
+                    <div style={{ width: '50vw' }} className='  w-100'><img style={{ width: '100%' }} className=' ' src={book.img} alt="" /></div>
+
                     <div className=" container w-75 m-lg-3">
                         <h2>Book Name: <span className='text-primary'>{book.name}</span></h2>
                         <h2>price : ${book.price}</h2>

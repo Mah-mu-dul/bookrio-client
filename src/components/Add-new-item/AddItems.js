@@ -45,7 +45,7 @@ const AddItems = () => {
     return (
         <div className='code-pro'>
             <h2 className='m-4 text-center'>want to add something?</h2>
-            <div className="imput-part container w-50 m-5 mx-auto">
+            <div className="imput-part container w-lg-50  w-sm-90  m-lg-5 mx-auto">
                 <Form onSubmit={handleAddItem}>
                     <Form.Group className="mb-3" controlId="">
                         <Form.Control name='imgurl' type="text" required placeholder="Image URL" />
@@ -55,11 +55,11 @@ const AddItems = () => {
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasictext">
-                        <Form.Control required name='supplyer' type="text" placeholder="supplyer name"  />
+                        <Form.Control required name='supplyer' type="text" placeholder="supplyer name" />
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasictext">
-                        <Form.Control name='quantity' type="number"required  placeholder="Product Quantity" />
+                        <Form.Control name='quantity' type="number" required placeholder="Product Quantity" />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasictext">
                         <Form.Control name='price' type="number" required placeholder="Product price" />

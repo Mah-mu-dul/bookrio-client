@@ -81,6 +81,8 @@ const Home = () => {
                 <Allitems></Allitems>
 
             </div>
+            <div style={{ width: '100%', height: '2px' }} className="bg-danger mb-5"></div>
+
             <div className="blog my-5">
                 <h2 className='text-center'>Write a review about a Book</h2>
                 <div className="container ">

@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { Button, Form, Toast } from 'react-bootstrap';
-import {  useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import './Login.css'
@@ -59,22 +59,22 @@ const Login = () => {
         navigate(from, { replace: true })
         toast('Login in sucessfull')
     }
-    if (error){
+    if (error) {
         window.location.reload()
-       return <>{
-           alert(error.message) 
+        return <>{
+            alert(error.message)
 
         }
-        </> 
-           
-       
-          
-           
- 
+        </>
+
+
+
+
+
 
     }
-    
-    
+
+
 
 
 
@@ -85,9 +85,9 @@ const Login = () => {
         const password = passwordRef.current.value
 
         await signInWithEmailAndPassword(email, password)
-        const { data } = await axios.post('http://localhost:5000/login',{email})
-        localStorage.setItem('accessToken',data.token)
-        navigate(from , {replace: true})     
+        const { data } = await axios.post('https://infinite-hamlet-19135.herokuapp.com/login', { email })
+        localStorage.setItem('accessToken', data.token)
+        navigate(from, { replace: true })
     }
 
 
