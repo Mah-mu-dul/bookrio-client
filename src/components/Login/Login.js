@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { Button, Form } from 'react-bootstrap';
+import { Button, Form, Toast } from 'react-bootstrap';
 import {  useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
@@ -11,6 +11,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import '../Add-new-item/AddItems.css'
 import Loading from '../common/Loading/Loading';
+import axios from 'axios';
 
 
 
@@ -59,7 +60,17 @@ const Login = () => {
         toast('Login in sucessfull')
     }
     if (error){
-       toast(error?.message)
+        window.location.reload()
+       return <>{
+           alert(error.message) 
+
+        }
+        </> 
+           
+       
+          
+           
+ 
 
     }
     
@@ -68,12 +79,15 @@ const Login = () => {
 
 
 
-    const handleSubmit = event => {
+    const handleSubmit = async event => {
         event.preventDefault()
         const email = emailRef.current.value
         const password = passwordRef.current.value
 
-        signInWithEmailAndPassword(email, password)
+        await signInWithEmailAndPassword(email, password)
+        const { data } = await axios.post('http://localhost:5000/login',{email})
+        localStorage.setItem('accessToken',data.token)
+        navigate(from , {replace: true})     
     }
 
 

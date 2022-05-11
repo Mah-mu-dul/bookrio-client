@@ -44,7 +44,7 @@ const ManageItems = () => {
                         {
                             books.map(book =>
 
-                                <div key={book._id} className="my-4">
+                                <div key={book._id} className="my-lg-4">
                                     <Card style={{ width: '25rem' }}>
                                         <Card.Img style={{ width: '25rem', height: '30rem' }} variant="top" src={book.img} />
                                         <Card.Body>
@@ -54,9 +54,10 @@ const ManageItems = () => {
                                             <Card.Text>
                                                 {book.description?.slice(0, 55)}....
                                             </Card.Text>
-                                            <div className=" d-lg-flex d-sm-block">
+                                            <div className=" d-lg-flex justify-content-around d-sm-block">
                                                 <Link to={`/book/${book._id}`}><Button variant="dark">details</Button></Link>
                                                 < button className='btn btn-danger' onClick={() => handleBookDelete(book._id)}>Delete item</button>
+
                                             </div>
                                             <ToastContainer />
 

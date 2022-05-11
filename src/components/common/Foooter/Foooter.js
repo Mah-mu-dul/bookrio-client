@@ -8,7 +8,7 @@ import { FaSwatchbook } from "react-icons/fa";
 
 const Foooter = () => {
     return (
-        <div className='text-white bg-dark py-4 d-lg-flex justify-content-between App '>
+        <div className='text-white w-100 bg-dark py-4 d-lg-flex justify-content-between App '>
             <div className="d-lg-flex d-md-flex justify-content-around container ">
                 <div className=" m-4 my-sm-5">
                     <h2><FaSwatchbook className='me-2 text-danger' color="" size={40} />BOOKrio</h2>

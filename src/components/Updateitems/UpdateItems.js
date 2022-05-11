@@ -71,22 +71,24 @@ const UpdateItems = () => {
             })
 
     }
-    return (
+    return ( 
 
-        <div className='d-lg-flex d-sm-block m-5 p-5 '>
-            <div className=" container">
-                <div className="d-lg-flex">
-                    <img style={{ width: '40%' }} className=' ' src={book.img} alt="" />
-                    <div className=" m-3">
+        <div className='d-lg-flex d-sm-block m-lg-5 p-lg-5 p-sm-'>
+            <div className=" container w-sm-100">
+                <div className="d-flex container w-100">
+
+                    <div style={{width:'50vw'}} className='  w-100'><img style={{ width: '100%' }} className=' ' src={book.img} alt="" /></div>
+                   
+                    <div className=" container w-75 m-lg-3">
                         <h2>Book Name: <span className='text-primary'>{book.name}</span></h2>
                         <h2>price : ${book.price}</h2>
                         <h2>Available items: {book.quantity}</h2>
                         {book.quantity == 0 && <h2 className='text-danger'> item sold</h2>}
                         <h3>Supplyer: {book.supplyer}</h3>
-                        <h4>supplyer email: {book.email}</h4>
+                        <h6>supplyer email: {book.email}</h6>
                     </div>
                 </div>
-                <p><h5>Book details:</h5> {book.description}</p>
+                <p className='container w-80'><h5>Book details:</h5> {book.description}</p>
 
 
 
