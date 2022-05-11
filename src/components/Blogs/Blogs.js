@@ -9,9 +9,9 @@ const Blogs = () => {
     }, [])
 
     return (
-        <div className='w-100 mx-sm-auto'>
+        <div className='w-100 mx-sm-auto '>
             <div className="d-lg-flex border border-1 rounded p-lg-4 p-sm-2 border-warning d-sm-block  justify-content-around m-lg-5 m-sm-3 ">
-                <div className="w-50 mx-sm-auto">
+                <div className="w-50 mx-sm-auto m-3">
                     <h2>Java script</h2>
                     <ul>
                         <li>Javascript is a programming language that is used for writing scripts of website.</li>
@@ -23,7 +23,7 @@ const Blogs = () => {
 
 
                 </div>
-                <div className="w-50 mx-sm-auto">
+                <div className="w-50 mx-sm-auto m-3">
                     <h2>Node js</h2>
                     <ul>
                         <li>NodeJS is a Javascript runtime environment.</li>
@@ -35,7 +35,7 @@ const Blogs = () => {
             </div>
             
             <div className="d-lg-flex border border-1 rounded p-lg-4 p-sm-2 border-warning d-sm-block  justify-content-around m-lg-5 m-sm-3 ">
-                <div className="w-50 mx-sm-auto">
+                <div className="w-50 mx-sm-auto m-3">
                     <h2>Node js</h2>
                     <ul>
                         <li>Node js id  an asynchronous event-driven JavaScript runtime.</li>
@@ -47,7 +47,7 @@ const Blogs = () => {
 
 
                 </div>
-                <div className="w-50 mx-sm-auto">
+                <div className="w-50 mx-sm-auto m-3">
                     <h2>Mongodb</h2>
                     <ul>
                         <li>mongodb is a nosql data base</li>
@@ -58,7 +58,7 @@ const Blogs = () => {
                 </div>
             </div>
             <div className="d-lg-flex border border-1 rounded p-lg-4 p-sm-2 border-warning d-sm-block  justify-content-around m-lg-5 m-sm-3 ">
-                <div className="w-50 mx-sm-auto">
+                <div className="w-50 mx-sm-auto m-3">
                     <h2>SQL</h2>
                     <ul>
                         <li>SQL databases are relational</li>
@@ -70,7 +70,7 @@ const Blogs = () => {
 
 
                 </div>
-                <div className="w-50 mx-sm-auto">
+                <div className="w-50 mx-sm-auto m-3">
                     <h2>No SQL</h2>
                     <ul>
                         <li>NoSQL databases are non-relational.</li>
