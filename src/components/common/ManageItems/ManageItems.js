@@ -8,7 +8,7 @@ const ManageItems = () => {
     const [books, setBooks] = useState([])
 
     useEffect(() => {
-        fetch('https://infinite-hamlet-19135.herokuapp.com/books')
+        fetch('http://localhost:5000/books')
             .then(res => res.json())
             .then(data => setBooks(data))
     }, [])
@@ -19,7 +19,7 @@ const ManageItems = () => {
         const proceed = window.confirm(`Are you sure to delete ${id} item`)
         if (proceed) {
             console.log('deleted', id);
-            const url = `https://infinite-hamlet-19135.herokuapp.com/books/${id}`
+            const url = `http://localhost:5000/books/${id}`
             fetch(url, {
                 method: 'DELETE'
             })
@@ -49,7 +49,7 @@ const ManageItems = () => {
                                     <Card.Title><h3>{book.name}</h3></Card.Title>
                                     <Card.Title><h2>${book.price}</h2></Card.Title>
                                     <Card.Text>
-                                        {book.description.slice(0,300)}.......
+                                        {book.description.slice(0, 300)}.......
                                     </Card.Text>
                                     <Card.Title><h3>Available items : {book.quantity}</h3></Card.Title>
                                     <Card.Title><h4>supplyer: {book.supplyer}</h4></Card.Title>

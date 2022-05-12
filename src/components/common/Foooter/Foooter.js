@@ -14,11 +14,11 @@ const Foooter = () => {
                     <h2><FaSwatchbook className='me-2 text-danger' color="" size={40} />BOOKrio</h2>
                     <small className="cikna"> 1418 River Drive, Suite 35 <br />
                         Cottonhall, CA 9622</small>
-                    <div className="icon cikna">
-                        <a target='_blank' href="https://www.facebook.com/mahmudulhasaniub/"><Facebook className='me-2 ' color="white" size={20} /></a>
-                        <a target='_blank' href="https://twitter.com/?lang=en"><Twitter className='me-2' color="white" size={20} /></a>
-                        <a href="https://www.instagram.com/mah.mu.dul_ha.san/?hl=en"><Instagram className='me-2' color="white" size={20} /></a>
-                        <a href="https://www.pinterest.com/princehasan16216/_saved/">   <Pinterest className='me-2' color="white" size={20} /></a>
+                    <div className="icon cikna ">
+                        <a className="text-decoration-none" target='_blank' href="https://www.facebook.com/mahmudulhasaniub/"><Facebook className='me-2 ' color="white" size={20} /></a>
+                        <a className="text-decoration-none" target='_blank' href="https://twitter.com/?lang=en"><Twitter className='me-2' color="white" size={20} /></a>
+                        <a className="text-decoration-none" target='_blank' href="https://www.instagram.com/mah.mu.dul_ha.san/?hl=en"><Instagram className='me-2' color="white" size={20} /></a>
+                        <a className="text-decoration-none" target='_blank' href="https://www.pinterest.com/princehasan16216/_saved/">   <Pinterest className='me-2' color="white" size={20} /></a>
                     </div>
 
                 </div>

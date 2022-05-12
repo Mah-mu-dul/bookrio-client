@@ -16,7 +16,7 @@ const Home = () => {
         const newBlog = { name, img, type, bloger, email, description }
         console.log(newBlog)
 
-        fetch('https://infinite-hamlet-19135.herokuapp.com/blogs', {
+        fetch('http://localhost:5000/blogs', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -81,6 +81,11 @@ const Home = () => {
                 <Allitems></Allitems>
 
             </div>
+            
+
+
+{/* review item */}
+
             <div style={{ width: '100%', height: '2px' }} className="bg-danger mb-5"></div>
 
             <div className="blog my-5">
