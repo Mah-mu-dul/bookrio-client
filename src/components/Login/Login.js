@@ -62,7 +62,7 @@ const Login = () => {
     if (error) {
         window.location.reload()
         return <>{
-            alert(error.message)
+            alert(error.message.slice(22, error.message.length - 2))
 
         }
         </>
