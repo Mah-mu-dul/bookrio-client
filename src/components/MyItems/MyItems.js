@@ -25,7 +25,11 @@ const MyItems = () => {
             console.log(email);
 
             const url = `http://localhost:5000/books/${email}`
-            const { data } = await axios.get(url)
+            const { data } = await axios.get(url, {
+                headers: {
+                    authorization: `Bearer ${localStorage.getItem('accessToken')}`
+                }
+            })
             console.log(data);
             setMyBooks(data)
         }
