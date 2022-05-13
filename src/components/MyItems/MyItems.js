@@ -9,26 +9,30 @@ import { AiFillDelete } from "react-icons/ai";
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { TypeH3, Windows } from 'react-bootstrap-icons';
+import axios from 'axios'
 
 
 
 
 const MyItems = () => {
     const [books, setBooks] = useState([])
-    const [myboooks, setMyBooks] = useState([])
+    const [mybooks, setMyBooks] = useState([])
     const [user, loading] = useAuthState(auth)
 
     useEffect(() => {
+        const getItem = async (user) => {
+            const email = user.email
+            console.log(email);
 
-        const url = `http://localhost:5000/books?email=${user.email}`
-        fetch(url,)
-            .then(res => res.json())
-            .then(data => {
-
-                setMyBooks(data)
-            })
+            const url = `http://localhost:5000/books/${email}`
+            const { data } = await axios.get(url)
+            console.log(data);
+            setMyBooks(data)
+        }
+        getItem(user)
 
     }, [user])
+    console.log(mybooks);
 
     if (loading) { return <Loading></Loading> }
 
@@ -36,7 +40,6 @@ const MyItems = () => {
     const handleBookDelete = async (id) => {
         const proceed = window.confirm(`Are you sure to delete ${id} item`)
         if (proceed) {
-            console.log('deleted', id)
             const url = `http://localhost:5000/books/${id}`
             fetch(url, {
                 method: 'DELETE'
@@ -47,11 +50,14 @@ const MyItems = () => {
                     toast('Item deleted')
                     const remaining = books.filter(book => book._id !== id)
 
-                    setBooks(remaining)
+                    // console.log(remaining);
+
+                    setMyBooks(remaining)
                     Windows.location.reload()
                 })
 
         }
+
 
     }
     return (
@@ -71,7 +77,7 @@ const MyItems = () => {
                             </tr>
 
                             {
-                                myboooks.map(book =>
+                                mybooks.map(book =>
                                     <tr key={book._id}>
                                         <td className='d-flex rounded-3 justify-content-center' ><img style={{ width: '50px', height: '50px' }} className=' rounded-circle' src={book.img} alt="Book image" /></td>
                                         <td >{book.name}</td>
