@@ -24,7 +24,7 @@ const MyItems = () => {
             const email = user.email
             console.log(email);
 
-            const url = `http://infinite-hamlet-19135.herokuapp.com/books/${email}`
+            const url = `https://infinite-hamlet-19135.herokuapp.com/books/${email}`
             const { data } = await axios.get(url, {
                 headers: {
                     authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -45,7 +45,7 @@ const MyItems = () => {
     const handleBookDelete = async (id) => {
         const proceed = window.confirm(`Are you sure to delete ${id} item`)
         if (proceed) {
-            const url = `http://infinite-hamlet-19135.herokuapp.com/books/${id}`
+            const url = `https://infinite-hamlet-19135.herokuapp.com/books/${id}`
             fetch(url, {
                 method: 'DELETE'
                 , body: user.email
