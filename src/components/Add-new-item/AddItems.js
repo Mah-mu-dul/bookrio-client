@@ -23,7 +23,7 @@ const AddItems = () => {
         const newBook = { name, img, supplyer, quantity, price, email, description }
         console.log(newBook);
 
-        fetch('https://infinite-hamlet-19135.herokuapp.com/ books', {
+        fetch('http://localhost:5000/books', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

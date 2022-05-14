@@ -7,7 +7,7 @@ const UpdateItems = () => {
     const [book, setBoook] = useState({})
     console.log(book);
     useEffect(() => {
-        const url = `https://infinite-hamlet-19135.herokuapp.com/ book/${id}`
+        const url = `http://localhost:5000/book/${id}`
         fetch(url)
             .then(res => res.json())
             .then(data => setBoook(data))
@@ -20,7 +20,7 @@ const UpdateItems = () => {
             const updateBook = { quantity }
             console.log(updateBook);
 
-            const url = `https://infinite-hamlet-19135.herokuapp.com/ book/${id}`
+            const url = `http://localhost:5000/book/${id}`
             fetch(url, {
                 method: 'PUT',
                 headers: {
@@ -52,7 +52,7 @@ const UpdateItems = () => {
         const updateBook = { quantity }
         console.log(updateBook);
 
-        const url = `https://infinite-hamlet-19135.herokuapp.com/ book/${id}`
+        const url = `http://localhost:5000/book/${id}`
         fetch(url, {
             method: 'PUT',
             headers: {

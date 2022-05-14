@@ -9,7 +9,7 @@ const Allitems = () => {
 
     const [books, setBooks] = useState([])
     useEffect(() => {
-        fetch('https://infinite-hamlet-19135.herokuapp.com/ books')
+        fetch('http://localhost:5000/books')
             .then(res => res.json())
             .then(data => setBooks(data))
     }, [])
@@ -54,7 +54,7 @@ const Allitems = () => {
                 <h1 className='text-center text-danger'><span>"</span> Quotes <span>"</span> </h1>
                 <h3>“A reader lives a thousand lives before he dies . . . The man who never reads lives only one.”</h3>
                 <h5 className='text-end'>- George R.R. Martin</h5>
-                
+
             </section>
 
 

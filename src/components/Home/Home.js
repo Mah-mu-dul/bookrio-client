@@ -16,7 +16,7 @@ const Home = () => {
         const newBlog = { name, img, type, bloger, email, description }
         console.log(newBlog)
 
-        fetch('https://infinite-hamlet-19135.herokuapp.com/ blogs', {
+        fetch('http://localhost:5000/blogs', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

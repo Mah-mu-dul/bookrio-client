@@ -24,13 +24,14 @@ const MyItems = () => {
             const email = user.email
             console.log(email);
 
-            const url = `https://infinite-hamlet-19135.herokuapp.com/ books/${email}`
+            const url = `http://localhost:5000/books/${email}`
             const { data } = await axios.get(url, {
                 headers: {
                     authorization: `Bearer ${localStorage.getItem('accessToken')}`
                 }
             })
-            console.log(data);
+            // console.log(data);
+            
             setMyBooks(data)
         }
         getItem(user)
@@ -44,7 +45,7 @@ const MyItems = () => {
     const handleBookDelete = async (id) => {
         const proceed = window.confirm(`Are you sure to delete ${id} item`)
         if (proceed) {
-            const url = `https://infinite-hamlet-19135.herokuapp.com/ books/${id}`
+            const url = `http://localhost:5000/books/${id}`
             fetch(url, {
                 method: 'DELETE'
                 , body: user.email
@@ -73,7 +74,6 @@ const MyItems = () => {
                             <tr>
                                 <th className='text-center'>Image</th>
                                 <th>Book name</th>
-                                <th>email</th>
                                 <th>price</th>
                                 <th>Avoilable quantity</th>
                                 <th>Delete </th>
@@ -85,7 +85,6 @@ const MyItems = () => {
                                     <tr key={book._id}>
                                         <td className='d-flex rounded-3 justify-content-center' ><img style={{ width: '50px', height: '50px' }} className=' rounded-circle' src={book.img} alt="Book image" /></td>
                                         <td >{book.name}</td>
-                                        <td >{book.email}</td>
                                         <td >{book.price}</td>
                                         <td >{book.quantity}</td>
                                         <td className='text-center text-danger'><h2>< button className='btn btn-danger' onClick={() => handleBookDelete(book._id)}><AiFillDelete></AiFillDelete></button>
