@@ -9,7 +9,7 @@ const Allitems = () => {
 
     const [books, setBooks] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/books')
+        fetch('http://infinite-hamlet-19135.herokuapp.com/books')
             .then(res => res.json())
             .then(data => setBooks(data))
     }, [])

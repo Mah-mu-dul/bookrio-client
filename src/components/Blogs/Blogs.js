@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 const Blogs = () => {
     const [blogs, setBlogs] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/blogs')
+        fetch('http://infinite-hamlet-19135.herokuapp.com/blogs')
             .then(res => res.json())
             .then(data => setBlogs(data))
     }, [])
